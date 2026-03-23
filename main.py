@@ -1,11 +1,11 @@
 import poems
 import sign
 
-author_name = "Твоє ім'я"
+author_name = "Nikita"
 
 print(sign.SIGN_TEMPLATE.format(author_name))
 
-wishes = "Більше практики\nМенше сухої теорії"
+wishes = "Більше практики Менше сухої теорії"
 print(wishes)
 
 stars = "**************************************************************************"
