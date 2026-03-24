@@ -6,7 +6,7 @@ my_city_accositation = '🌧️'
 print('My second accosiation is', my_city_accositation)
 city_name = ('Saarbruecken')
 print('This city name is:', city_name)
-unicode_rain_code = 'U+1F327'
+unicode_umbrella_code = 'U+1F34D'
 print('Unicode rain code is:', unicode_rain_code)
 unicode_rain_emoji = '🌧'
 print('Unicode rain emoji is:', unicode_rain_emoji)
@@ -19,7 +19,7 @@ eneid_poem = """""
 
 Еней був парубок моторний
 
-І хлопець хоть куди козак,
+І хлопець хоч куди козак,
 
 Удавсь на всеє зле проворний,
 
@@ -35,6 +35,5 @@ eneid_poem = """""
 
 Осмалених, як гиря, ланців,
 
-П’ятами з Трої накивав.
-
+П’ятами з Трої накивав."""
 print(eneid_poem)
