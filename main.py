@@ -1,23 +1,30 @@
-import requests
 
-url = "https://script.google.com/macros/s/AKfycbzAYl-rgB5RAfwdDWetWeFPSbyHGBhomqSH25qQAE1AgxKsBVfZ_aCAyp8BLs1BkZ1c/exec"
+# 1. Average
+def average(a, b, c):
+    result = (a + b + c) / 3
+    return round(result, 2)
 
-response = requests.get(url)
-data = response.json()
 
-animals = data["animals"]
+# 2. Even + >10
+def foo(something) -> bool:
+    return something % 2 == 0 and something > 10
 
-venomous_cost = 0
-african_animals = 0
 
-for animal in animals:
+# 3. Vowels
+def count_vowels(text: str) -> int:
+    vowels = "aeiouyAEIOUY"
+    count = 0
 
-  
-    if animal["is_venomous"].strip().lower() == "yes":
-        venomous_cost += animal["care_cost"] * animal["count"]
+    for char in text:
+        if char in vowels:
+            count += 1
 
-    if animal["continent"].strip().lower() == "africa":
-        african_animals += animal["count"]
+    return count
 
-print("Вартість догляду за отруйними тваринами:", venomous_cost)
-print("Кількість африканських тварин:", african_animals)
+
+# ---- тесты (это для фото) ----
+
+print(average(3, 6, 9))
+print(foo(12))
+print(foo(8))
+print(count_vowels("Hello World"))
