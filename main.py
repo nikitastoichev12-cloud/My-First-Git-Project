@@ -1,34 +1,25 @@
-
-from functions import calc, change_text, sum_numbers
-
+import requests
 
 
 
-print(calc(10, 5, "sub"))
+pdf_url = "https://github.com/progit/progit2/releases/download/2.1.449/progit.pdf"
 
+response = requests.get(pdf_url)
 
-print(calc(a=10, b=5, operation="sum"))
+with open("progit.pdf", "wb") as f:
+    f.write(response.content)
 
-
-args1 = {"a": 20, "b": 10, "operation": "sub"}
-print(calc(**args1))
-
-
-
-
-print(change_text("Hello"))
-
-print(change_text(text="Hello world", upper=False))
-
-args2 = {"text": "Python test", "upper": True}
-print(change_text(**args2))
+print("PDF downloaded successfully")
 
 
 
+json_url = "http://api.open-notify.org/astros.json"
 
-print(sum_numbers("1,2,3"))
+response = requests.get(json_url)
+data = response.json()
 
-print(sum_numbers(numbers="10,20,30", separator=","))
+with open("astros.json", "w", encoding="utf-8") as f:
+    import json
+    json.dump(data, f, indent=4)
 
-args3 = {"numbers": "5,5,5", "separator": ","}
-print(sum_numbers(**args3))
+print("JSON saved successfully")
