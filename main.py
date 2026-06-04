@@ -1,30 +1,34 @@
 
-# 1. Average
-def average(a, b, c):
-    result = (a + b + c) / 3
-    return round(result, 2)
+from functions import calc, change_text, sum_numbers
 
 
-# 2. Even + >10
-def foo(something) -> bool:
-    return something % 2 == 0 and something > 10
 
 
-# 3. Vowels
-def count_vowels(text: str) -> int:
-    vowels = "aeiouyAEIOUY"
-    count = 0
-
-    for char in text:
-        if char in vowels:
-            count += 1
-
-    return count
+print(calc(10, 5, "sub"))
 
 
-# ---- тесты (это для фото) ----
+print(calc(a=10, b=5, operation="sum"))
 
-print(average(3, 6, 9))
-print(foo(12))
-print(foo(8))
-print(count_vowels("Hello World"))
+
+args1 = {"a": 20, "b": 10, "operation": "sub"}
+print(calc(**args1))
+
+
+
+
+print(change_text("Hello"))
+
+print(change_text(text="Hello world", upper=False))
+
+args2 = {"text": "Python test", "upper": True}
+print(change_text(**args2))
+
+
+
+
+print(sum_numbers("1,2,3"))
+
+print(sum_numbers(numbers="10,20,30", separator=","))
+
+args3 = {"numbers": "5,5,5", "separator": ","}
+print(sum_numbers(**args3))
